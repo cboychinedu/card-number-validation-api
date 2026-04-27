@@ -23,7 +23,7 @@ A robust API service for validating credit card numbers using the **Luhn Algorit
    ```bash
    npm run dev
    ```
-   The server will be running at `http://localhost:3001`.
+   The server will be running at `http://localhost:3000`.
 
 ---
 
@@ -33,12 +33,12 @@ To use this API with Postman, follow these steps:
 
 ### 1. View Documentation
 Before sending requests, you can view the interactive documentation by visiting:
-- **URL:** `http://localhost:3001/api`
+- **URL:** `http://localhost:3000/api`
 - **Method:** `GET`
 
 ### 2. Validate Card Number (POST Request)
 Send a POST request to the following endpoint:
-- **URL:** `http://localhost:3001/api`
+- **URL:** `http://localhost:3000/api`
 - **Method:** `POST`
 - **Headers:** `Content-Type: application/json`
 
@@ -49,7 +49,7 @@ Send a POST request to the following endpoint:
 ### ✅ Valid Card Request
 To test a valid card number, use the following JSON body:
 
-**Endpoint:** `POST http://localhost:3001/api`
+**Endpoint:** `POST http://localhost:3000/api`
 
 **Body:**
 ```json
@@ -72,7 +72,7 @@ To test a valid card number, use the following JSON body:
 ### ❌ Fake (Invalid) Card Request
 To test an invalid or fake card number, use the following JSON body (as requested):
 
-**Endpoint:** `POST http://localhost:3001/api`
+**Endpoint:** `POST http://localhost:3000/api`
 
 **Body:**
 ```json
