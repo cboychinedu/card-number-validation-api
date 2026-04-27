@@ -13,7 +13,7 @@ home.get("/", async (request, response) => {
     return response.sendFile(templateFolder);
 });
 // Vaidate the credit card 
-home.post("/validate-card", (request, response, next) => {
+home.post("/", (request, response, next) => {
     // Using try catch block to handle the requests 
     try {
         // Getting the request body 

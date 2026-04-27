@@ -48,5 +48,5 @@ const corsOptions = {
     ]
 };
 // Exporting the cors configurations 
-module.exports.corsOptions;
+module.exports = corsOptions;
 //# sourceMappingURL=corsConfig.js.map
