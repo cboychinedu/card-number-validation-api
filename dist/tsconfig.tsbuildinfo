@@ -1,0 +1,1 @@
+{"root":["../app.ts","../corsconfig/corsconfig.ts","../interface/errorresponse.ts","../interface/successresponse.ts","../logs/logger.ts","../routes/home/homeroutes.ts","../routes/users/usersroutes.ts","../test/generatecard.ts","../validatecard/validatecard.ts"],"version":"6.0.3"}

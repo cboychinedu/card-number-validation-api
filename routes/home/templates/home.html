@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Validator API</title>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --bg: #f8fafc;
+            --text: #1e293b;
+            --code-bg: #1e1e1e;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        }
+
+        h1 {
+            color: var(--primary);
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        .endpoint {
+            background: #eff6ff;
+            padding: 10px 15px;
+            border-left: 4px solid var(--primary);
+            font-family: monospace;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        pre {
+            background: var(--code-bg);
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 14px;
+        }
+
+        .method {
+            background: var(--primary);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .badge {
+            background: #dcfce7;
+            color: #166534;
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .valid {
+            background-color: #166534;
+            font-size: 20px;
+            padding: 20px;
+            color: white;
+            border-radius: 6px;
+        }
+
+        .inValid {
+            background-color: rgba(255, 0, 0, 0.823);
+            font-size: 20px;
+            padding: 20px;
+            color: white;
+            border-radius: 6px;
+        }
+
+        .inValidCardDiv {
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>💳 Card Validator API</h1>
+        <p>Welcome! This API allows you to validate credit card numbers using the <strong>Luhn Algorithm</strong>.</p>
+
+        <h3>Endpoint</h3>
+        <div class="endpoint">
+            <span class="method">POST</span> /api
+        </div>
+
+        <h3>How to Use</h3>
+        <!-- For sending valid card -->
+        <div name="validCard">
+            <p class="valid"> For sending a valid card number:</p>
+            <p>Send a JSON request body containing the card number you wish to verify.</p>
+
+            <pre>
+                {
+                    "cardNumber": "401170277372404218"
+                }
+            </pre>
+
+            <h3>Example Response</h3>
+            <pre>
+                {
+                    "status": "success",
+                    "isValid": true,
+                    "message": "Card number is valid!",
+                    "cardNumber": "**************4218",
+                    "statusCode": 200
+                }
+            </pre>
+
+        </div>
+
+
+        <!-- For sending in valid card -->
+        <div class="inValidCardDiv">
+            <p class="inValid"> For sending an inValid card number:</p>
+            <p>Send a JSON request body containing the card number you wish to verify.</p>
+
+            <pre>
+                {
+                    "cardNumber": "401170277372404210"
+                }
+            </pre>
+
+            <h3>Example Response</h3>
+            <pre>
+                {
+                    "status": "error",
+                    "isValid": false,
+                    "message": "Card number is not valid!",
+                    "cardNumber": "**************4210",
+                    "statusCode": 400
+                }
+            </pre>
+
+            <div style="margin-top: 30px;">
+                <span class="badge">Status: Online</span>
+                <span class="badge" style="background: #fee2e2; color: #991b1b; margin-left: 10px;">Security:
+                    Enabled</span>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
