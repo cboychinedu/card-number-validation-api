@@ -51,7 +51,7 @@ app.use(morgan('combined'));
 app.use(morgan('combined', { stream: accessLogStream, immediate: true }));
 
 // Setting the host 
-const HOST: string = process.env.HOST || "localhost";
+const HOST: string = process.env.HOST || "0.0.0.0";
 const PORT: number = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 
 // Setting the necessary router 

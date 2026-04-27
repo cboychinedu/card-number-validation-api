@@ -46,7 +46,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('combined'));
 app.use(morgan('combined', { stream: accessLogStream, immediate: true }));
 // Setting the host 
-const HOST = process.env.HOST || "localhost";
+const HOST = process.env.HOST || "0.0.0.0";
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 // Setting the necessary router 
 app.use('/api', home);
