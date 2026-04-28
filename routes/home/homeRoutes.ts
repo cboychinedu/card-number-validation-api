@@ -19,7 +19,7 @@ home.get("/", async (request: Request, response: Response) => {
 })
 
 // Vaidate the credit card 
-home.post("/", (request: Request, response: Response, next: NextFunction) => {
+home.post("/validate-card", (request: Request, response: Response, next: NextFunction) => {
     // Using try catch block to handle the requests 
     try {
         // Getting the request body 
